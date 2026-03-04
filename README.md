@@ -3,7 +3,7 @@
 
 ### Group Members
 - **Aditya Ramakrishnan** (lqv849)  
-- **Aneek Mohammed Ruksan** (szj128)  
+- **Aneek Mohamed Ruksan** (szj128)  
 - **Chidubem Emeka-Nwuba** (age149)  
 - **Ethan D'Almeida** (cye810)  
 - **Sebastian Josh Ramos** (vua064)  
