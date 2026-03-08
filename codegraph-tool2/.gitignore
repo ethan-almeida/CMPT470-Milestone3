@@ -1,0 +1,45 @@
+# Virtual environments
+codegraph_venv/
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Model checkpoints
+saveModel/
+*.pkl
+*.pth
+*.pt
+
+# Dataset files
+DataSetJsonVec/
+*.json
+googlejam4_src/
+
+# Logs
+*.log
+training_log.txt
+test_results.txt
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+recoreds.txt
+val_recoreds.txt
+test_recoreds.txt
