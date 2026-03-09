@@ -1,0 +1,10 @@
+rubhus_venv/
+__pycache__/
+*.pyc
+cloneDetectionModels/
+cloneDetectionData/
+CloneDetectionSrc/
+*.db
+*.log
+.vscode/
+.DS_Store
