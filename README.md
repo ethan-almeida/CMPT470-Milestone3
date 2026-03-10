@@ -42,7 +42,7 @@ In cases where no official repository or archived material was provided in the o
   https://ieeexplore.ieee.org/document/10927826  
 
 - **Repository (Possible Implementation):**  
-  https://github.com/pievos101/Ensemble-GNN  
+  https://github.com/CGCL-codes/Amain 
 
 ---
 
