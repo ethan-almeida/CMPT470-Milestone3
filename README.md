@@ -28,9 +28,12 @@ In cases where no official repository or archived material was provided in the o
 
 ### AST-GGNN  
 
-- **Paper:**  
+- **Original Paper:**  
   https://ieeexplore.ieee.org/document/10401783  
 
+- **Alternative Paper:**
+  https://arxiv.org/pdf/2002.08653
+  
 - **Repository (Potential Equivalent):**  
   https://github.com/jacobwwh/graphmatch_clone  
 
@@ -38,9 +41,12 @@ In cases where no official repository or archived material was provided in the o
 
 ### CT3AST  
 
-- **Paper:**  
+- **Original Paper:**  
   https://ieeexplore.ieee.org/document/10927826  
 
+- **Alternative Paper:**
+  https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10401783
+  
 - **Repository (Possible Implementation):**  
   https://github.com/CGCL-codes/Amain 
 
