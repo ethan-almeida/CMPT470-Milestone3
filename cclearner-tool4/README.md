@@ -49,7 +49,7 @@ For this experiment, the BigCloneBench dataset was selected.
 The following artifacts were downloaded:
 	1.	BigCloneBench PostgreSQL database dump
 	2.	IJaDataset source code dataset
-
+These were downloaded from the course onedrive link 
 
 4. Database Setup
 
@@ -124,8 +124,7 @@ This change allowed the tool to successfully authenticate with the database.
 
 During execution, CCLearner failed to connect to the PostgreSQL database even after the authentication configuration was corrected.
 
-Further investigation revealed that the executable JAR was not consistently using the configuration file located in the repository directory. Instead, the program attempted to load the configuration from a hardcoded path used by the original authors:
-
+The CCLearner implementation references a hardcoded configuration path used by the original authors.
 
 /home/cclearner/Desktop/CCLearner/CCLearner.conf
 
