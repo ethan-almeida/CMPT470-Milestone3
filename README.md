@@ -34,7 +34,7 @@ In cases where no official repository or archived material was provided in the o
 - **Alternative Paper:**
   https://arxiv.org/pdf/2002.08653
   
-- **Repository (Potential Equivalent):**  
+- **Repository (Equivalent):**  
   https://github.com/jacobwwh/graphmatch_clone  
 
 ---
@@ -47,7 +47,7 @@ In cases where no official repository or archived material was provided in the o
 - **Alternative Paper:**
   https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10401783
   
-- **Repository (Possible Implementation):**  
+- **Repository (Possible Implementation, not relevant for our use case):**  
   https://github.com/CGCL-codes/Amain 
 
 ---
