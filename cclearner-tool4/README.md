@@ -2,7 +2,7 @@
 
 CCLearner Reproduction Report
 
-1. Artifact Discovery
+## 1. Artifact Discovery
 
 The research paper assigned for reproduction is:
 
@@ -14,12 +14,12 @@ Repository:
 https://github.com/liuqingli/CCLearner
 
 The repository contains the following components:
-	•	Feature extraction module
-	•	Training module
-	•	Testing module
-	•	Precompiled executable JAR files
+- Feature extraction module
+- Training module
+- Testing module
+- Precompiled executable JAR files
 
-2. Environment Setup
+## 2. Environment Setup
 
 The experiments were conducted in a virtual machine environment on a MacBook Air M4 using UTM to ensure reproducibility.
 
@@ -40,10 +40,7 @@ PostgreSQL was installed using:
 
 sudo apt install postgresql postgresql-contrib
 
-3. Benchmark Acquisition
-
-The assignment requires the use of approved clone detection benchmarks.
-
+## 3. Benchmark 
 For this experiment, the BigCloneBench dataset was selected.
 
 The following artifacts were downloaded:
@@ -51,7 +48,7 @@ The following artifacts were downloaded:
 	2.	IJaDataset source code dataset
 These were downloaded from the course onedrive link 
 
-4. Database Setup
+## 4. Database Setup
 
 The BigCloneBench database dump was imported into PostgreSQL.
 
@@ -79,7 +76,7 @@ tagged
 
 This confirms that the BigCloneBench was correctly loaded.
 
-5. Configuration Setup
+## 5. Configuration Setup
 
 The default configuration file provided in the repository referenced absolute paths from the authors’ system.
 
@@ -96,7 +93,7 @@ postgreSQL.passwd=postgres
 
 mkdir -p ~/cmpt470-repro/output
 
-6. Compatibility Intervention
+## 6. Interventions used:-
 
 During execution, the tool failed to connect to PostgreSQL with the following error:
 
@@ -120,7 +117,7 @@ sudo systemctl restart postgresql
 This change allowed the tool to successfully authenticate with the database.
 
 
-7. Configuration Synchronization Issue
+## 7. Configuration Synchronization Issue
 
 During execution, CCLearner failed to connect to the PostgreSQL database even after the authentication configuration was corrected.
 
@@ -147,7 +144,7 @@ The configuration files involved were:
 After synchronizing the configuration files, the tool was able to connect successfully to the PostgreSQL database.
 
 
-8. Dataset Directory Layout Mismatch
+## 8. Dataset Directory Layout Mismatch
 
 After resolving configuration and authentication issues, the feature extraction module was executed using:
 
@@ -196,7 +193,7 @@ done
 
 This created directories 2 through 11 containing symbolic links to the existing dataset folders, allowing the paths expected by CCLearner to resolve correctly.
 
-9. Feature Extraction Execution
+## 9. Feature Extraction Execution
 
 After correcting the dataset directory structure, the feature extraction stage was executed again:
 
@@ -225,7 +222,7 @@ The generated training feature file was written to the output directory:
 Verification of the output directory confirmed that the file was created successfully.
 
 
-10. Training Stage Failure
+## 10. Training Stage Failure
 
 After the successful completion of feature extraction, the training stage was executed using:
 
@@ -246,35 +243,29 @@ However, the same error persisted, indicating that the required native libraries
 Although the required ND4J JAR files were present in the Run/lib directory, the native components required by the deep learning backend could not be successfully loaded in the current environment.
 
 
-11. Execution Outcome
+## 11. Execution Outcome
 
 Based on the experiments performed:
-	•	The artifact was successfully located.
-	•	The required benchmark dataset was obtained.
-	•	The PostgreSQL benchmark database was successfully imported.
-	•	Multiple compatibility issues were resolved, including authentication configuration and dataset directory structure.
-	•	The feature extraction stage completed successfully and produced the expected output.
+-	The artifact was successfully located.
+-	The required benchmark dataset was obtained.
+-	The PostgreSQL benchmark database was successfully imported.
+-	Multiple compatibility issues were resolved, including authentication configuration and dataset directory structure.
+-	The feature extraction stage completed successfully and produced the expected output.
 
 However, the training stage failed due to unresolved native ND4J dependencies required by the Deeplearning4j framework.
 
 As a result, the full workflow of the tool could not be completed.
 
 
-12. Tool Executability Status
-
-According to the Tool Executability Status (TES) taxonomy defined in the assignment, the tool is classified as:
+## 12. Tool Executability Status
 
 TES-C - Partially Executable
 
 Reason:
-	•	The tool successfully completed initial stages of execution, including configuration loading, database interaction, and feature extraction.
-	•	The full intended workflow could not be completed due to unresolved native dependency issues during the training phase.
+- The tool successfully completed initial stages of execution, including configuration loading, database interaction, and feature extraction.
+- The full intended workflow could not be completed due to dependency issues during the training phase.
 
 
-13. Summary
+## 13. Summary
 
 The CCLearner artifact was partially reproducible in the recreated environment. While the initial stages of the pipeline executed successfully after several compatibility adjustments, the training stage could not be completed due to missing or incompatible native deep learning dependencies.
-
-This highlights a common reproducibility challenge in research artifacts where older machine learning frameworks rely on native libraries that may not function correctly in modern environments.
- 
-
