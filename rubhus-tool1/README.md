@@ -10,11 +10,11 @@ This artifact was discovered from the research paper associated with this topic.
 
 ## Installation and Execution Steps
 
-Original requirements.txt had compatibility issues. Used the following installation steps:
-pip install torch==1.7.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
-pip install torch-geometric==1.6.3
-pip install torch-scatter==2.0.5 torch-sparse==0.6.8 torch-cluster==1.5.8 torch-spline-conv==1.2.0 -f https://data.pyg.org/whl/torch-1.7.1+cpu.html
-pip install numpy==1.16.2 arguments==76 tensorboard
+- Original requirements.txt had compatibility issues. Used the following installation steps:
+- pip install torch==1.7.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+- pip install torch-geometric==1.6.3
+- pip install torch-scatter==2.0.5 torch-sparse==0.6.8 torch-cluster==1.5.8 torch-spline-conv==1.2.0 -f https://data.pyg.org/whl/torch-1.7.1+cpu.html
+- pip install numpy==1.16.2 arguments==76 tensorboard
 
 
 ## Code Fixes:
@@ -24,16 +24,24 @@ Fixed import in trainerRubhus.py line 285: changed from modelCloneDetection impo
 Downloaded AtCoder SQLite3 database (75MB)
 
 ## Execution:
-Attempted to run python trainerRubhus.py
-Benchmarks Used
-Dataset: AtCoder Cross-Language Clone Dataset
-Languages: Java and Python
-Format: SQLite3 database
-Interventions Used
+- Attempted to run trainerRubhus.py via the command "python trainerRubhus.py"
+- The training process would not initiate since it always threw up an error asking for the files "ClonePairs.txt" and "NonClonePairs.txt". The repository or the paper did not go into how they got these files. I did have access to the database files and the
+additional .py files they used but the documentation or the repository's README did not mention the folder structure of those datasets.
+- Because of the above error, the tool would not pass the build stage at all.
+- We also tried, using the CodeChef database as well (since they mentioned using it). This also failed because again it asked for the same text files mentioned above and that dataset did not include those files either. 
+
+## Benchmarks Used
+Dataset: AtCoder Cross-Language Clone Dataset, CodeChef database
+
+## Languages: Java and Python
+## Format: SQLite3 database
+
+## Interventions Used
 Downgraded to Python 3.7 (numpy 1.16.2 incompatible with Python 3.8+)
 Used CPU-only torch builds (GPU not supported by torch 1.7.1)
 Fixed incorrect import statement in trainerRubhus.py
 Added missing tensorboard dependency
+
 
 ## Execution Outcome and TES Classification
 TES Classification: TES-D (Non-Executable)
