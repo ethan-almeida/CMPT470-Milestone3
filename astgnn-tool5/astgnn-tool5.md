@@ -28,16 +28,33 @@ Link to the GitHub repository of the alternative tool:- https://github.com/jacob
 	- javalang
 	- anytree
 	- torch_scatter
+	
+- need to setup datasets, used unzip -n javadata.zip and unzip -n googlejam4_src.zip
+- code interventions, please look below for more details
+- ran the tool, command used: python ggnn_gcj.py --graphmode astonly --data_setting 0small --num_layers 1 --num_epochs 1 --batch_size 64
 
 # Benchmarks used:-
-- BigCodeBench
+- Google Code Jam
 
 
 # Interventions:-
+Multiple interventions were needed as there were a number of errors in the actual python files themselves that were preventing us from getting an output.
+These include :-
 
-There was 1 small step required, as the models.py file was importing an older version of the torch-scatter library and hence needed to be refactored to use the correct name.
+- File parse crash
+There was an error for list index being out of range in the createclone_java.py file, this was fixed by adding guards in createdatapair() to strip() each line and continue on lines that were blank or malformed.
+
+- CLI arguments parsed as strings when they are actually numbers
+This error was in ggnn_gcj.py.
+This was fixed by updating the argparse defintions to use type=int for specifically the batch_size, num_layers, num_epochs parameters
+
+- Tensor shape error
+This was in ggnn_gcj.py as well. Error was fixed by just replacing 'label' with '[label]' in both the training and testing loops (test())
 
 
 # Execution outcome and TES classification:-
 
+On running the tool, we got a precision of 0.36, a recall of 0.95
+
+Since running this tool needed a few interventions to get up and running, we classified this as a TES-B tool
 
